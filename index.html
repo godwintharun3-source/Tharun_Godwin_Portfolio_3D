@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tharun Godwin .C | Cybersecurity & Software Development</title>
+  
+  <meta name="description" content="Portfolio of Tharun Godwin .C — Cybersecurity Specialist, Software Developer, SOC Analyst, 3D Spatial Systems & Full-Stack Architect.">
+  <meta name="keywords" content="Tharun Godwin, Cybersecurity, SOC Analyst, Software Engineer, React, Three.js, Spring Boot, Python, Red Hat, AWS, Nmap, Wireshark, Metasploit">
+  <meta name="author" content="Tharun Godwin .C">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tharun Godwin .C | Cyber & Software Engineer">
+  <meta property="og:description" content="Explore my portfolio featuring 3D Three.js Humanoid Cyber Bot, Interactive Globe Geo-Tracking, Cyber Playing Cards, and Biometric Admin CMS.">
+  <meta property="og:image" content="assets/images/profile.png">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/shield.svg">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       OPENING CYBER BOOT SEQUENCE OVERLAY
+       ========================================================================== -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-content">
+      <div class="boot-scanner-ring">
+        <svg class="boot-fingerprint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69"></path>
+          <path d="M12 6a6 6 0 0 0-6 6c0 2.22 1.21 4.16 3 5.2"></path>
+          <path d="M12 10a2 2 0 0 0-2 2c0 .74.4 1.39 1 1.73"></path>
+          <path d="M12 14v4"></path>
+          <path d="M16 10a6 6 0 0 1 2 4.47"></path>
+          <path d="M20 12a10 10 0 0 1-.36 2.65"></path>
+        </svg>
+      </div>
+      <h2 class="boot-title">THARUN GODWIN .C // OS</h2>
+      <div class="boot-status">INITIALIZING BIOMETRIC & 3D SPATIAL KERNEL...</div>
+      <div class="boot-progress-bar">
+        <div class="boot-progress-fill"></div>
+      </div>
+      <button id="btn-skip-boot" class="boot-skip-btn">Skip Initialization ➔</button>
+    </div>
+  </div>
+
+  <!-- Ambient Background & Canvas -->
+  <div class="bg-canvas-wrapper">
+    <canvas id="cyber-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Audio Synthesizer Haptic Toggle -->
+  <button id="audio-toggle-btn" class="audio-toggle-pill active" title="Toggle cyber audio effects">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <span>SFX: ON</span>
+  </button>
+
+  <!-- ==========================================================================
+       STICKY FROSTED GLASS NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">THARUN GODWIN .C</span>
+          <span class="brand-role">CYBERSECURITY & DEV</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">About</a></li>
+        <li><a href="#cyber-deck" class="nav-link">Cyber Deck ♠</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#tools" class="nav-link">Tools</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#globe-section" class="nav-link">3D Globe 🌐</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- 3-Way Theme Switcher (Auto / Dark / Light) -->
+        <button id="theme-toggle-btn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.78rem;" title="Switch Theme (Auto / Dark / Light)">
+          <span id="theme-toggle-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </span>
+          <span id="theme-toggle-label">AUTO</span>
+        </button>
+
+        <!-- Biometric Admin Unlock Button -->
+        <button id="btn-biometric-auth" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.78rem;" title="Fingerprint / Touch ID Biometric Authentication">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69"></path>
+            <path d="M12 12v4"></path>
+            <circle cx="12" cy="8" r="1"></circle>
+          </svg>
+          <span>🔒 Admin Edit</span>
+        </button>
+
+        <a href="assets/resume.pdf" target="_blank" download class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume PDF</span>
+        </a>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <a href="#hero" class="mobile-nav-link">About</a>
+    <a href="#cyber-deck" class="mobile-nav-link">Cyber Deck ♠</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#tools" class="mobile-nav-link">Tools Arsenal</a>
+    <a href="#skills" class="mobile-nav-link">Skills & Stack</a>
+    <a href="#globe-section" class="mobile-nav-link">3D Globe & Locations</a>
+    <a href="#certifications" class="mobile-nav-link">Certifications</a>
+    <a href="#timeline" class="mobile-nav-link">Timeline</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="assets/resume.pdf" target="_blank" download class="btn btn-primary" style="margin-top: 15px;">
+      Download Resume (PDF)
+    </a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (WITH 3D HUMANOID BOT & PROFILE)
+         ========================================================================== -->
+    <section id="hero" class="hero-section section">
+      <div class="hero-grid">
+        <div class="hero-content reveal-on-scroll">
+          <div class="glass-pill emerald">
+            <span class="status-indicator"></span>
+            <span data-cms-key="hero_status_pill">AVAILABLE FOR INTERNSHIPS // SKCET COIMBATORE</span>
+          </div>
+
+          <h1 class="hero-headline" data-cms-key="hero_main_headline">
+            Building Secure Code &<br>
+            <span class="gradient-accent">Defense-Grade Systems.</span>
+          </h1>
+
+          <p class="hero-description" data-cms-key="hero_bio_text">
+            Hi, I’m <strong>Tharun Godwin .C</strong> — a Computer Science Engineering student specializing in 
+            <strong>Cyber Security</strong> & <strong>Software Development</strong>. Hands-on project experience spanning 
+            unified SOC monitoring, AI anomaly risk platforms, smart telemetry pipelines, and scalable e-commerce microservices.
+          </p>
+
+          <div class="hero-tags-row">
+            <span class="glass-pill">🛡️ SOC Threat Intel</span>
+            <span class="glass-pill">🤖 Machine Learning & AI</span>
+            <span class="glass-pill">⚡ Spring Boot & FastAPI</span>
+            <span class="glass-pill">☁️ AWS & Red Hat</span>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#cyber-deck" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span>Play Cyber Deck ♠</span>
+            </a>
+            <button id="btn-open-bot-chat" class="btn btn-secondary">
+              <span>🤖 Chat with Bot</span>
+            </button>
+            <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="GitHub Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/tharun-godwin" target="_blank" rel="noreferrer" class="btn-icon" title="LinkedIn Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <div class="metric-val" data-cms-key="metric_proj">4<span>+</span></div>
+              <div class="metric-lbl">Flagship Projects</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val" data-cms-key="metric_merit">89<span>%</span></div>
+              <div class="metric-lbl">Diploma Merit</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val" data-cms-key="metric_badges">8<span>+</span></div>
+              <div class="metric-lbl">Cloud/Sec Badges</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val" data-cms-key="metric_sih">SIH<span>'24</span></div>
+              <div class="metric-lbl">SIH Participant</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Profile & 3D Humanoid Cyber Bot Capsule -->
+        <div class="hero-visual-wrapper reveal-on-scroll">
+          <div class="cyber-orbit-ring"></div>
+          <div class="cyber-orbit-ring-inner"></div>
+
+          <div class="hero-profile-capsule">
+            <img src="assets/images/profile.png" alt="Tharun Godwin .C" class="profile-inner-img">
+          </div>
+
+          <!-- Top-Right Floating Badge -->
+          <div class="floating-glass-badge badge-top-right">
+            <div class="badge-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="badge-content-box">
+              <span class="badge-title">SOC Analyst & Dev</span>
+              <span class="badge-subtitle">SKCET Coimbatore</span>
+            </div>
+          </div>
+
+          <!-- Bottom-Left Floating Badge (Updated: SIH Participant) -->
+          <div class="floating-glass-badge badge-bottom-left">
+            <div class="badge-icon-box" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="badge-content-box">
+              <span class="badge-title" data-cms-key="badge_sih_title">SIH Participant</span>
+              <span class="badge-subtitle" data-cms-key="badge_sih_sub">MPLAD AI Anomaly Engine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SIGNATURE PLAYING CARDS SECTION (3D CYBER DECK)
+         ========================================================================== -->
+    <section id="cyber-deck" class="playing-cards-section section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>INTERACTIVE CYBER DECK</span>
+        </div>
+        <h2 class="section-title">The Strategic <span class="gradient-accent">Card Deck.</span></h2>
+        <p class="section-subtitle">
+          Hover for 3D holographic tilt, double click or tap corner to flip, switch viewing modes, or shuffle the deck like a high-tech casino dealer.
+        </p>
+      </div>
+
+      <!-- Controls Toolbar -->
+      <div class="deck-controls-bar reveal-on-scroll">
+        <div class="deck-view-toggles">
+          <button class="view-btn active" data-deck-view="fan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Fan Hand</span>
+          </button>
+          <button class="view-btn" data-deck-view="stack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>3D Stack</span>
+          </button>
+          <button class="view-btn" data-deck-view="grid">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Glass Matrix</span>
+          </button>
+        </div>
+
+        <div class="deck-actions">
+          <button id="btn-deal-card" class="deck-action-btn" title="Deal top card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Deal Top Card</span>
+          </button>
+          <button id="btn-shuffle-deck" class="deck-action-btn" title="Shuffle playing cards">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+            <span>Shuffle Deck</span>
+          </button>
+          <button id="btn-flip-all" class="deck-action-btn" title="Flip card faces">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+            <span>Flip All</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D Arena Container -->
+      <div id="cards-arena" class="cards-arena-wrapper mode-fan reveal-on-scroll">
+        <div id="deck-container" class="cards-deck-container">
+
+          <!-- CARD 1: Ace of Spades (Nexus SOC) -->
+          <div class="playing-card" data-card-id="1">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-holo-foil"></div>
+                <div class="card-corner top-left">
+                  <span class="card-rank suit-cyan">A</span>
+                  <span class="card-suit suit-cyan">♠</span>
+                </div>
+                <div class="card-header-bar">
+                  <span class="card-rarity-pill defense">DEFENSE // SOC</span>
+                  <button class="card-flip-action" title="Flip card">↺</button>
+                </div>
+                <div class="card-body-core">
+                  <div class="card-emblem-circle" style="color: var(--cyan);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                  </div>
+                  <h3 class="card-project-title" data-cms-key="card1_title">Nexus SOC Platform</h3>
+                  <div class="card-project-role">UNIFIED CYBER DEFENSE</div>
+                  <p class="card-project-summary" data-cms-key="card1_summary">
+                    Centralized Security Operations Center with real-time vulnerability scanning, threat intelligence, firewall controls, and dark-web reconnaissance.
+                  </p>
+                  <div class="card-tech-chips">
+                    <span class="card-chip">Python</span>
+                    <span class="card-chip">Threat Intel</span>
+                    <span class="card-chip">Firewall</span>
+                    <span class="card-chip">IoT Scan</span>
+                  </div>
+                </div>
+                <div class="card-footer-stats">
+                  <div class="stat-chip">
+                    <span class="stat-num">99.4%</span>
+                    <span class="stat-desc">Visibility</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">LIVE</span>
+                    <span class="stat-desc">Threat Feed</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">TIER 1</span>
+                    <span class="stat-desc">Security</span>
+                  </div>
+                </div>
+                <div class="card-corner bottom-right">
+                  <span class="card-rank suit-cyan">A</span>
+                  <span class="card-suit suit-cyan">♠</span>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <div class="card-back-pattern">
+                  <div class="card-back-inner-border"></div>
+                  <span class="card-flip-prompt">↺ DOUBLE TAP TO REVEAL</span>
+                  <div class="card-back-seal">
+                    <span class="seal-monogram">TG</span>
+                    <span class="seal-subtext">CYBER DECK</span>
+                  </div>
+                  <span class="card-back-badge">SECURITY PROTOCOL 01</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: King of Diamonds (MPLAD SIH Participant) -->
+          <div class="playing-card" data-card-id="2">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-holo-foil"></div>
+                <div class="card-corner top-left">
+                  <span class="card-rank suit-gold">K</span>
+                  <span class="card-suit suit-gold">♦</span>
+                </div>
+                <div class="card-header-bar">
+                  <span class="card-rarity-pill sih">SIH // AI AUDIT</span>
+                  <button class="card-flip-action" title="Flip card">↺</button>
+                </div>
+                <div class="card-body-core">
+                  <div class="card-emblem-circle" style="color: var(--gold);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                  <h3 class="card-project-title" data-cms-key="card2_title">MPLAD AI Risk System</h3>
+                  <div class="card-project-role">SMART INDIA HACKATHON PARTICIPANT</div>
+                  <p class="card-project-summary" data-cms-key="card2_summary">
+                    Decision-support engine auditing public works using Isolation Forest anomaly detection, duplicate transaction checks, and automated risk scoring.
+                  </p>
+                  <div class="card-tech-chips">
+                    <span class="card-chip">React/Vite</span>
+                    <span class="card-chip">FastAPI</span>
+                    <span class="card-chip">scikit-learn</span>
+                    <span class="card-chip">Pandas</span>
+                  </div>
+                </div>
+                <div class="card-footer-stats">
+                  <div class="stat-chip">
+                    <span class="stat-num">AI-ML</span>
+                    <span class="stat-desc">Iso Forest</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-desc">Inspection</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">SIH</span>
+                    <span class="stat-desc">Participant</span>
+                  </div>
+                </div>
+                <div class="card-corner bottom-right">
+                  <span class="card-rank suit-gold">K</span>
+                  <span class="card-suit suit-gold">♦</span>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <div class="card-back-pattern">
+                  <div class="card-back-inner-border"></div>
+                  <span class="card-flip-prompt">↺ DOUBLE TAP TO REVEAL</span>
+                  <div class="card-back-seal">
+                    <span class="seal-monogram">TG</span>
+                    <span class="seal-subtext">AI INTELLIGENCE</span>
+                  </div>
+                  <span class="card-back-badge">ANOMALY DETECTOR 02</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: Queen of Hearts (Made In Veedu) -->
+          <div class="playing-card" data-card-id="3">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-holo-foil"></div>
+                <div class="card-corner top-left">
+                  <span class="card-rank suit-rose">Q</span>
+                  <span class="card-suit suit-rose">♥</span>
+                </div>
+                <div class="card-header-bar">
+                  <span class="card-rarity-pill legendary">FULL STACK // PROD</span>
+                  <button class="card-flip-action" title="Flip card">↺</button>
+                </div>
+                <div class="card-body-core">
+                  <div class="card-emblem-circle" style="color: var(--rose);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                  </div>
+                  <h3 class="card-project-title" data-cms-key="card3_title">Made In Veedu</h3>
+                  <div class="card-project-role">E-COMMERCE PLATFORM</div>
+                  <p class="card-project-summary" data-cms-key="card3_summary">
+                    Artisanal storefront with Spring Security JWT auth, order workflows, email notifications, and AI-assisted item recommendations.
+                  </p>
+                  <div class="card-tech-chips">
+                    <span class="card-chip">Spring Boot</span>
+                    <span class="card-chip">JWT Auth</span>
+                    <span class="card-chip">Docker</span>
+                    <span class="card-chip">MySQL</span>
+                  </div>
+                </div>
+                <div class="card-footer-stats">
+                  <div class="stat-chip">
+                    <span class="stat-num">JWT</span>
+                    <span class="stat-desc">Secured</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">FAST</span>
+                    <span class="stat-desc">FastAPI AI</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">CONTAINER</span>
+                    <span class="stat-desc">Compose</span>
+                  </div>
+                </div>
+                <div class="card-corner bottom-right">
+                  <span class="card-rank suit-rose">Q</span>
+                  <span class="card-suit suit-rose">♥</span>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <div class="card-back-pattern">
+                  <div class="card-back-inner-border"></div>
+                  <span class="card-flip-prompt">↺ DOUBLE TAP TO REVEAL</span>
+                  <div class="card-back-seal">
+                    <span class="seal-monogram">TG</span>
+                    <span class="seal-subtext">COMMERCE STACK</span>
+                  </div>
+                  <span class="card-back-badge">SPRING ARCHITECTURE 03</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: Jack of Clubs (AgriLoop 360) -->
+          <div class="playing-card" data-card-id="4">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-holo-foil"></div>
+                <div class="card-corner top-left">
+                  <span class="card-rank suit-emerald">J</span>
+                  <span class="card-suit suit-emerald">♣</span>
+                </div>
+                <div class="card-header-bar">
+                  <span class="card-rarity-pill defense">IOT // TELEMETRY</span>
+                  <button class="card-flip-action" title="Flip card">↺</button>
+                </div>
+                <div class="card-body-core">
+                  <div class="card-emblem-circle" style="color: var(--emerald);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                      <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                      <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <h3 class="card-project-title" data-cms-key="card4_title">AgriLoop 360</h3>
+                  <div class="card-project-role">SMART AGRI IOT ENGINE</div>
+                  <p class="card-project-summary" data-cms-key="card4_summary">
+                    Precision agriculture dashboard monitoring soil, water, composting, crop health, food storage alerts, and simulated telemetry streams.
+                  </p>
+                  <div class="card-tech-chips">
+                    <span class="card-chip">React/Vite</span>
+                    <span class="card-chip">Spring JPA</span>
+                    <span class="card-chip">REST APIs</span>
+                    <span class="card-chip">IoT Sensors</span>
+                  </div>
+                </div>
+                <div class="card-footer-stats">
+                  <div class="stat-chip">
+                    <span class="stat-num">REALTIME</span>
+                    <span class="stat-desc">Telemetry</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">SOIL/H2O</span>
+                    <span class="stat-desc">Optimization</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">REST</span>
+                    <span class="stat-desc">Endpoints</span>
+                  </div>
+                </div>
+                <div class="card-corner bottom-right">
+                  <span class="card-rank suit-emerald">J</span>
+                  <span class="card-suit suit-emerald">♣</span>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <div class="card-back-pattern">
+                  <div class="card-back-inner-border"></div>
+                  <span class="card-flip-prompt">↺ DOUBLE TAP TO REVEAL</span>
+                  <div class="card-back-seal">
+                    <span class="seal-monogram">TG</span>
+                    <span class="seal-subtext">IOT TELEMETRY</span>
+                  </div>
+                  <span class="card-back-badge">SMART SENSOR SUITE 04</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5: 10 of Pentacles (Cloud & Red Hat) -->
+          <div class="playing-card" data-card-id="5">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-holo-foil"></div>
+                <div class="card-corner top-left">
+                  <span class="card-rank suit-purple">10</span>
+                  <span class="card-suit suit-purple">⬡</span>
+                </div>
+                <div class="card-header-bar">
+                  <span class="card-rarity-pill cyber">INFRA // CLOUD</span>
+                  <button class="card-flip-action" title="Flip card">↺</button>
+                </div>
+                <div class="card-body-core">
+                  <div class="card-emblem-circle" style="color: var(--purple);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="card-project-title" data-cms-key="card5_title">Red Hat & AWS</h3>
+                  <div class="card-project-role">CERTIFIED CLOUD & LINUX</div>
+                  <p class="card-project-summary" data-cms-key="card5_summary">
+                    Certified in Red Hat System Administration & 5 AWS Educate badges (Cloud 101, Compute, Networking, Security, Storage) with Docker virtualization.
+                  </p>
+                  <div class="card-tech-chips">
+                    <span class="card-chip">Red Hat Linux</span>
+                    <span class="card-chip">AWS Cloud</span>
+                    <span class="card-chip">Docker</span>
+                    <span class="card-chip">SysAdmin</span>
+                  </div>
+                </div>
+                <div class="card-footer-stats">
+                  <div class="stat-chip">
+                    <span class="stat-num">5 BADGES</span>
+                    <span class="stat-desc">AWS Educate</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">CERTIFIED</span>
+                    <span class="stat-desc">Red Hat</span>
+                  </div>
+                  <div class="stat-chip">
+                    <span class="stat-num">ROOT</span>
+                    <span class="stat-desc">Linux Admin</span>
+                  </div>
+                </div>
+                <div class="card-corner bottom-right">
+                  <span class="card-rank suit-purple">10</span>
+                  <span class="card-suit suit-purple">⬡</span>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <div class="card-back-pattern">
+                  <div class="card-back-inner-border"></div>
+                  <span class="card-flip-prompt">↺ DOUBLE TAP TO REVEAL</span>
+                  <div class="card-back-seal">
+                    <span class="seal-monogram">TG</span>
+                    <span class="seal-subtext">SYS & CLOUD</span>
+                  </div>
+                  <span class="card-back-badge">CERTIFIED INFRA 05</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FLAGSHIP PROJECTS SECTION (DETAILED CARDS)
+         ========================================================================== -->
+    <section id="projects" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span>ENGINEERING SHOWCASE</span>
+        </div>
+        <h2 class="section-title">Flagship <span class="gradient-accent">Projects.</span></h2>
+        <p class="section-subtitle">
+          Engineered with secure architectures, modern backend APIs, scalable frontend interfaces, and machine learning models.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Nexus SOC Platform -->
+        <div class="glass-panel project-card reveal-on-scroll">
+          <div>
+            <div class="project-top">
+              <span class="project-category-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                CYBERSECURITY & SOC
+              </span>
+              <div class="project-links-row">
+                <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="View GitHub Repo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-cms-key="p1_title">
+              Nexus SOC Platform
+              <span>// Unified Dashboard</span>
+            </h3>
+
+            <p class="project-desc" data-cms-key="p1_desc">
+              Designed a unified Security Operations Center (SOC) dashboard that consolidates threat intelligence, automated vulnerability scanning, firewall rule controllers, IoT device discovery, and dark-web credential exposure monitoring into a single pane of glass.
+            </p>
+
+            <ul class="project-features-list" data-cms-key="p1_features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Multi-vector vulnerability scanner with automated risk scoring
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Integrated firewall policy management & IoT network reconnaissance
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Dark-web threat intelligence ingestion & breach alert system
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">Python Backend</span>
+            <span class="tech-tag">Threat Intelligence</span>
+            <span class="tech-tag">Firewall Controls</span>
+            <span class="tech-tag">Security Monitoring</span>
+            <span class="tech-tag">IoT Discovery</span>
+          </div>
+        </div>
+
+        <!-- Project 2: MPLAD AI Risk System (SIH Participant) -->
+        <div class="glass-panel project-card reveal-on-scroll">
+          <div>
+            <div class="project-top">
+              <span class="project-category-badge" style="background: rgba(245, 158, 11, 0.1); color: var(--gold); border-color: rgba(245, 158, 11, 0.3);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                SIH PARTICIPANT // AI AUDIT
+              </span>
+              <div class="project-links-row">
+                <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="View GitHub Repo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-cms-key="p2_title">
+              MPLAD AI Risk Intelligence
+              <span>// SIH Platform</span>
+            </h3>
+
+            <p class="project-desc" data-cms-key="p2_desc">
+              Built an intelligent decision-support system to review public development works for the Smart India Hackathon (SIH). Automatically flags cost deviations, detects duplicate transactions, applies Isolation Forest machine learning anomaly detection, and generates downloadable audit reports.
+            </p>
+
+            <ul class="project-features-list" data-cms-key="p2_features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Unsupervised Isolation Forest model detecting spending anomalies
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated budget deviation thresholds & duplicate vendor transaction traps
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated PDF/Excel inspection report generator for field auditors
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">SQLite</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Made In Veedu -->
+        <div class="glass-panel project-card reveal-on-scroll">
+          <div>
+            <div class="project-top">
+              <span class="project-category-badge" style="background: rgba(244, 63, 94, 0.1); color: var(--rose); border-color: rgba(244, 63, 94, 0.3);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                </svg>
+                FULL-STACK & CLOUD
+              </span>
+              <div class="project-links-row">
+                <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="View GitHub Repo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-cms-key="p3_title">
+              Made In Veedu
+              <span>// Production Storefront</span>
+            </h3>
+
+            <p class="project-desc" data-cms-key="p3_desc">
+              Developed a full-stack e-commerce marketplace for organic homemade masalas, health mixes, and traditional delicacies. Features robust role-based JWT authentication, automated order tracking, transactional email receipts, and a Python recommendation service.
+            </p>
+
+            <ul class="project-features-list" data-cms-key="p3_features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Spring Security 6 with stateless JWT authorization & refresh tokens
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Microservice architecture containerized with Docker Compose
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                AI-driven collaborative filtering recommendation engine via FastAPI
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Docker Compose</span>
+          </div>
+        </div>
+
+        <!-- Project 4: AgriLoop 360 -->
+        <div class="glass-panel project-card reveal-on-scroll">
+          <div>
+            <div class="project-top">
+              <span class="project-category-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--emerald); border-color: rgba(16, 185, 129, 0.3);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+                IOT & AGRI-TECH
+              </span>
+              <div class="project-links-row">
+                <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="View GitHub Repo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title" data-cms-key="p4_title">
+              AgriLoop 360
+              <span>// Smart Agriculture</span>
+            </h3>
+
+            <p class="project-desc" data-cms-key="p4_desc">
+              Comprehensive IoT-enabled agriculture intelligence platform that tracks soil moisture, nitrogen-phosphorus-potassium (NPK) ratios, water scheduling, composting health, crop yield projections, and food warehouse storage deterioration risks in real time.
+            </p>
+
+            <ul class="project-features-list" data-cms-key="p4_features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Simulated IoT sensor telemetry pipelines with high-throughput ingestion
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fertilizer optimization algorithms tailored to current soil acidity and moisture
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Early perishable spoilage alerts via temperature & humidity threshold triggers
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Spring Data JPA</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CYBER DEFENSE & AI TOOLS ARSENAL (NEW REQUIREMENT)
+         ========================================================================== -->
+    <section id="tools" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <span>DEFENSIVE & OFFENSIVE ARSENAL</span>
+        </div>
+        <h2 class="section-title">Security & AI <span class="gradient-accent">Tooling.</span></h2>
+        <p class="section-subtitle">
+          Specialized utilities mastered for network scanning, penetration testing, vulnerability research, forensics, and autonomous AI engineering.
+        </p>
+      </div>
+
+      <div class="tools-arsenal-grid reveal-on-scroll">
+        <!-- Nmap -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box">📡</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Nmap</span>
+              <span class="tool-type-pill">Network Recon</span>
+            </div>
+            <p class="tool-desc">Host discovery, port mapping, NSE scripting, service finger-printing, and defense perimeter scanning.</p>
+          </div>
+        </div>
+
+        <!-- Wireshark -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--blue);">🦈</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Wireshark</span>
+              <span class="tool-type-pill">Packet Analysis</span>
+            </div>
+            <p class="tool-desc">Deep packet inspection, pcap traffic analysis, TLS handshakes, TCP stream dissection, and anomaly detection.</p>
+          </div>
+        </div>
+
+        <!-- Metasploit -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--rose);">🎯</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Metasploit</span>
+              <span class="tool-type-pill">Penetration Testing</span>
+            </div>
+            <p class="tool-desc">Exploit execution, payload delivery, post-exploitation enumeration, and auxiliary security auditing.</p>
+          </div>
+        </div>
+
+        <!-- Exploit-DB -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--gold);">⚡</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Exploit-DB</span>
+              <span class="tool-type-pill">CVE Research</span>
+            </div>
+            <p class="tool-desc">Vulnerability research, proof-of-concept verification, zero-day threat analysis, and CVE tracking.</p>
+          </div>
+        </div>
+
+        <!-- OWASP Tools -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--emerald);">🛡️</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">OWASP Tools & ZAP</span>
+              <span class="tool-type-pill">App Security</span>
+            </div>
+            <p class="tool-desc">OWASP Top 10 auditing, automated web application fuzzing, SQL injection, XSS defense, and header validation.</p>
+          </div>
+        </div>
+
+        <!-- ExifTool -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--purple);">🔍</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">ExifTool / EXIF</span>
+              <span class="tool-type-pill">Digital Forensics</span>
+            </div>
+            <p class="tool-desc">Metadata extraction, digital forensic timeline reconstruction, steganography inspection, and file artifact analysis.</p>
+          </div>
+        </div>
+
+        <!-- Antigravity -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: var(--cyan);">✨</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Antigravity</span>
+              <span class="tool-type-pill">Agentic AI</span>
+            </div>
+            <p class="tool-desc">Autonomous multi-agent workflows, full-stack architectural engineering, and advanced agentic coding.</p>
+          </div>
+        </div>
+
+        <!-- Claude -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: #ea580c;">🧠</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">Claude</span>
+              <span class="tool-type-pill">LLM Architecture</span>
+            </div>
+            <p class="tool-desc">Deep reasoning, secure code audits, complex prompt engineering, and structural software design.</p>
+          </div>
+        </div>
+
+        <!-- ChatGPT -->
+        <div class="glass-panel tool-arsenal-card">
+          <div class="tool-icon-box" style="color: #10b981;">💬</div>
+          <div class="tool-info-box">
+            <div class="tool-name-row">
+              <span class="tool-name">ChatGPT</span>
+              <span class="tool-type-pill">AI Automation</span>
+            </div>
+            <p class="tool-desc">Generative AI logic, script synthesis, automation workflows, and rapid algorithm prototyping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS MATRIX SECTION
+         ========================================================================== -->
+    <section id="skills" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+            <rect x="9" y="9" width="6" height="6"></rect>
+            <line x1="9" y1="1" x2="9" y2="4"></line>
+            <line x1="15" y1="1" x2="15" y2="4"></line>
+            <line x1="9" y1="20" x2="9" y2="23"></line>
+            <line x1="15" y1="20" x2="15" y2="23"></line>
+          </svg>
+          <span>TECHNICAL ARSENAL</span>
+        </div>
+        <h2 class="section-title">Skills & <span class="gradient-accent">Competencies.</span></h2>
+        <p class="section-subtitle">
+          A blend of defensive & offensive cybersecurity skills, cloud administration, enterprise software frameworks, and emerging artificial intelligence.
+        </p>
+      </div>
+
+      <div class="skills-filter-tabs reveal-on-scroll">
+        <button class="filter-tab active" data-skill-filter="all">All Disciplines</button>
+        <button class="filter-tab" data-skill-filter="cyber">Cyber & Network</button>
+        <button class="filter-tab" data-skill-filter="cloud">Cloud & Systems</button>
+        <button class="filter-tab" data-skill-filter="dev">Development & APIs</button>
+        <button class="filter-tab" data-skill-filter="ai">Emerging Tech & IoT</button>
+      </div>
+
+      <div class="skills-grid reveal-on-scroll">
+        <!-- Category 1: Cyber & Network -->
+        <div class="glass-panel skill-category-card" data-skill-category="cyber">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3 class="skill-cat-title">Cyber & Network</h3>
+              <span class="glass-pill emerald" style="padding: 2px 8px; font-size: 0.7rem;">Defense</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span class="skill-name">Ethical Hacking Tools</span>
+              </div>
+              <span class="skill-badge">Offensive</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span class="skill-name">SOC Basics & Monitoring</span>
+              </div>
+              <span class="skill-badge">Blue Team</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                <span class="skill-name">Threat Analysis</span>
+              </div>
+              <span class="skill-badge">Intel</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/></svg>
+                <span class="skill-name">Digital Forensics</span>
+              </div>
+              <span class="skill-badge">Investigation</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+                <span class="skill-name">Linux (Red Hat Certified)</span>
+              </div>
+              <span class="skill-badge">Admin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Cloud & Systems -->
+        <div class="glass-panel skill-category-card" data-skill-category="cloud">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="color: var(--gold); background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            </div>
+            <div>
+              <h3 class="skill-cat-title">Cloud & Systems</h3>
+              <span class="glass-pill" style="padding: 2px 8px; font-size: 0.7rem; color: var(--gold);">Infrastructure</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                <span class="skill-name">AWS Cloud (5 Badges)</span>
+              </div>
+              <span class="skill-badge">Cloud</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+                <span class="skill-name">Docker & Containers</span>
+              </div>
+              <span class="skill-badge">DevOps</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                <span class="skill-name">Virtualization & VMs</span>
+              </div>
+              <span class="skill-badge">Hypervisors</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span class="skill-name">Python Scripting</span>
+              </div>
+              <span class="skill-badge">Automation</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                <span class="skill-name">Java Enterprise</span>
+              </div>
+              <span class="skill-badge">Backend</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Development & APIs -->
+        <div class="glass-panel skill-category-card" data-skill-category="dev">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="color: var(--blue); background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h3 class="skill-cat-title">Development & APIs</h3>
+              <span class="glass-pill cyan" style="padding: 2px 8px; font-size: 0.7rem;">Full Stack</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
+                <span class="skill-name">React.js & Vite</span>
+              </div>
+              <span class="skill-badge">Frontend</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span class="skill-name">Spring Boot & Security</span>
+              </div>
+              <span class="skill-badge">Enterprise</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/></svg>
+                <span class="skill-name">RESTful APIs & FastAPI</span>
+              </div>
+              <span class="skill-badge">APIs</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/></svg>
+                <span class="skill-name">MySQL & Relational SQL</span>
+              </div>
+              <span class="skill-badge">Database</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/></svg>
+                <span class="skill-name">UI/UX & App Development</span>
+              </div>
+              <span class="skill-badge">Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Emerging Tech & AI -->
+        <div class="glass-panel skill-category-card" data-skill-category="ai">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="color: var(--purple); background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+            </div>
+            <div>
+              <h3 class="skill-cat-title">Emerging Tech & IoT</h3>
+              <span class="glass-pill" style="padding: 2px 8px; font-size: 0.7rem; color: var(--purple);">Innovation</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                <span class="skill-name">Machine Learning (Python)</span>
+              </div>
+              <span class="skill-badge">AI / Models</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                <span class="skill-name">Internet of Things (IoT)</span>
+              </div>
+              <span class="skill-badge">Hardware</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/></svg>
+                <span class="skill-name">Data Science (Pandas/NumPy)</span>
+              </div>
+              <span class="skill-badge">Analytics</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                <span class="skill-name">Artificial Intelligence</span>
+              </div>
+              <span class="skill-badge">Algorithms</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+                <span class="skill-name">Virtual Reality (VR)</span>
+              </div>
+              <span class="skill-badge">Interactive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3D INTERACTIVE GLOBE & TAMIL NADU GEO-TRACKING (NEW REQUIREMENT)
+         ========================================================================== -->
+    <section id="globe-section" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>SPATIAL 3D GEODESIC ENGINE</span>
+        </div>
+        <h2 class="section-title">Academic Pathway <span class="gradient-accent">Geo-Tracker.</span></h2>
+        <p class="section-subtitle">
+          Interactive 3D Three.js Globe that dynamically rotates with page scrolling. Featuring animated 3D geodesic flight arcs connecting the three educational milestones across Tamil Nadu, India.
+        </p>
+      </div>
+
+      <div class="globe-section-grid">
+        <!-- 3D Three.js Globe Viewport -->
+        <div class="glass-panel globe-canvas-card reveal-on-scroll">
+          <div class="globe-hud-overlay">
+            <span class="globe-hud-badge">LAT 8.7°N – 10.9°N // LON 76.9°E – 77.4°E</span>
+            <span class="globe-hud-badge" style="color: var(--emerald);">● TAMIL NADU, INDIA RADAR LOCKED</span>
+          </div>
+
+          <div id="cyber-globe-container"></div>
+
+          <div class="globe-controls-overlay">
+            <button id="btn-focus-india" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem;">
+              🎯 Focus Tamil Nadu
+            </button>
+          </div>
+        </div>
+
+        <!-- Landmark Cards Column -->
+        <div class="landmark-cards-column reveal-on-scroll">
+          <!-- Landmark 1: School -->
+          <div class="glass-panel landmark-card">
+            <div class="landmark-top">
+              <span class="landmark-tag school">FOUNDATION // 10TH & 12TH</span>
+              <span class="glass-pill" style="font-size: 0.65rem;">8.7183°N, 77.3693°E</span>
+            </div>
+            <h4 class="landmark-name" data-cms-key="loc1_name">Andrews Mat. Hr. Sec. School</h4>
+            <p class="landmark-desc" data-cms-key="loc1_desc">Completed 10th & 12th Standard Higher Secondary Education (72%).</p>
+            <div class="landmark-addr" data-cms-key="loc1_addr">
+              📍 1F2 East Pudumanai Street, East Kottaram, Vickramasingapuram, Tamil Nadu 627422
+            </div>
+            <a href="https://maps.app.goo.gl/dNSiCFLMcVNGajAC8" target="_blank" rel="noreferrer" class="landmark-link">
+              <span>Inspect on Google Maps</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Landmark 2: Diploma -->
+          <div class="glass-panel landmark-card">
+            <div class="landmark-top">
+              <span class="landmark-tag diploma">POLYTECHNIC // 89% DISTINCTION</span>
+              <span class="glass-pill" style="font-size: 0.65rem;">8.9056°N, 77.4125°E</span>
+            </div>
+            <h4 class="landmark-name" data-cms-key="loc2_name">M.S.P.V.N.L.T Polytechnic</h4>
+            <p class="landmark-desc" data-cms-key="loc2_desc">Diploma in Computer Science & Engineering (Lateral Entry Merit 89%).</p>
+            <div class="landmark-addr" data-cms-key="loc2_addr">
+              📍 50/2, Pavoorchatram, Sivagamipuram, Alangulam, Tirunelveli, Tamil Nadu 627808
+            </div>
+            <a href="https://maps.app.goo.gl/ETNoeBc4VDjbEdLRA" target="_blank" rel="noreferrer" class="landmark-link">
+              <span>Inspect on Google Maps</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Landmark 3: BE College -->
+          <div class="glass-panel landmark-card">
+            <div class="landmark-top">
+              <span class="landmark-tag be">BE CSE // CYBER SECURITY</span>
+              <span class="glass-pill" style="font-size: 0.65rem;">10.9388°N, 76.9558°E</span>
+            </div>
+            <h4 class="landmark-name" data-cms-key="loc3_name">SKCET Coimbatore</h4>
+            <p class="landmark-desc" data-cms-key="loc3_desc">Bachelor of Engineering in CSE (Cyber Security) // 3rd Year / 5th Sem, CGPA: 7.4.</p>
+            <div class="landmark-addr" data-cms-key="loc3_addr">
+              📍 BK Pudur, Kuniyamuthur, Coimbatore, Tamil Nadu 641008
+            </div>
+            <a href="https://maps.app.goo.gl/yQcYfnzkx22DAReC9" target="_blank" rel="noreferrer" class="landmark-link">
+              <span>Inspect on Google Maps</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATIONS & BADGES SECTION
+         ========================================================================== -->
+    <section id="certifications" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span>ACCREDITATION & CREDENTIALS</span>
+        </div>
+        <h2 class="section-title">Verified <span class="gradient-accent">Certifications.</span></h2>
+        <p class="section-subtitle">
+          Industry-recognized training in System Administration, Ethical Hacking, Machine Learning, and AWS Cloud Architecture.
+        </p>
+      </div>
+
+      <div class="certs-grid reveal-on-scroll">
+        <!-- Cert 1: Red Hat SysAdmin -->
+        <div class="glass-panel cert-card" data-cert-view data-cert-src="assets/images/certs/redhat-sysadmin.jpg" data-cert-title="Red Hat: System Administration Training Certification" data-cert-desc="Enterprise Linux system administration, storage management, security hardening, user management, and service orchestration.">
+          <div class="cert-media-box">
+            <img src="assets/images/certs/redhat-sysadmin.jpg" alt="Red Hat Certification">
+          </div>
+          <span class="cert-issuer">RED HAT ENTERPRISE</span>
+          <h4 class="cert-name">System Administration Training</h4>
+          <span class="cert-view-cta">
+            <span>Inspect Certificate</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </div>
+
+        <!-- Cert 2: Ethical Hacking 101 -->
+        <div class="glass-panel cert-card" data-cert-view data-cert-src="assets/images/certs/ethical-hacking.png" data-cert-title="Cybersecurity: Ethical Hacking 101: Beginners Guide" data-cert-desc="Offensive security fundamentals, footprinting, network reconnaissance, vulnerability exploitation, and security posture auditing.">
+          <div class="cert-media-box">
+            <img src="assets/images/certs/ethical-hacking.png" alt="Ethical Hacking Certificate">
+          </div>
+          <span class="cert-issuer">CYBERSECURITY</span>
+          <h4 class="cert-name">Ethical Hacking 101 Guide</h4>
+          <span class="cert-view-cta">
+            <span>Inspect Certificate</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </div>
+
+        <!-- Cert 3: Machine Learning using Python -->
+        <div class="glass-panel cert-card" data-cert-view data-cert-src="assets/images/certs/ml-python.png" data-cert-title="Data Science: Machine Learning using Python" data-cert-desc="Supervised and unsupervised learning, regression, classification, clustering, model evaluation, and scikit-learn pipelines.">
+          <div class="cert-media-box">
+            <img src="assets/images/certs/ml-python.png" alt="Machine Learning Python">
+          </div>
+          <span class="cert-issuer">DATA SCIENCE</span>
+          <h4 class="cert-name">Machine Learning using Python</h4>
+          <span class="cert-view-cta">
+            <span>Inspect Certificate</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </div>
+
+        <!-- Cert 4: AWS Educate Cloud 101 -->
+        <div class="glass-panel cert-card" data-cert-view data-cert-src="assets/images/certs/aws-cloud101.png" data-cert-title="AWS Educate: Cloud 101 Badge" data-cert-desc="Core cloud computing principles, global infrastructure, security, identity, and architectural fundamentals in Amazon Web Services.">
+          <div class="cert-media-box">
+            <img src="assets/images/certs/aws-cloud101.png" alt="AWS Cloud 101 Badge">
+          </div>
+          <span class="cert-issuer">AMAZON WEB SERVICES</span>
+          <h4 class="cert-name">AWS Educate Cloud 101</h4>
+          <span class="cert-view-cta">
+            <span>Inspect Badge</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- AWS Educate 5 Badges Ribbon -->
+      <div class="glass-panel aws-badges-ribbon reveal-on-scroll">
+        <div class="aws-ribbon-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>AWS Educate Digital Badges Series (5 Specializations)</span>
+        </div>
+
+        <div class="aws-badges-row">
+          <div class="aws-badge-item" data-cert-view data-cert-src="assets/images/certs/aws-cloud101.png" data-cert-title="AWS Educate: Cloud 101" data-cert-desc="Foundations of cloud concepts and AWS architecture.">
+            <img src="assets/images/certs/aws-cloud101.png" alt="AWS Cloud 101">
+            <span>Cloud 101</span>
+          </div>
+
+          <div class="aws-badge-item" data-cert-view data-cert-src="assets/images/certs/aws-compute.png" data-cert-title="AWS Educate: Compute" data-cert-desc="Virtual compute instances, EC2 sizing, autoscaling, and serverless compute.">
+            <img src="assets/images/certs/aws-compute.png" alt="AWS Compute">
+            <span>Compute</span>
+          </div>
+
+          <div class="aws-badge-item" data-cert-view data-cert-src="assets/images/certs/aws-networking.png" data-cert-title="AWS Educate: Networking" data-cert-desc="Virtual Private Clouds (VPC), routing tables, subnets, gateways, and load balancing.">
+            <img src="assets/images/certs/aws-networking.png" alt="AWS Networking">
+            <span>Networking</span>
+          </div>
+
+          <div class="aws-badge-item" data-cert-view data-cert-src="assets/images/certs/aws-security.png" data-cert-title="AWS Educate: Security" data-cert-desc="AWS Identity and Access Management (IAM), security groups, encryption, and policy audits.">
+            <img src="assets/images/certs/aws-security.png" alt="AWS Security">
+            <span>Security</span>
+          </div>
+
+          <div class="aws-badge-item" data-cert-view data-cert-src="assets/images/certs/aws-storage.png" data-cert-title="AWS Educate: Storage" data-cert-desc="Object storage (S3), block storage (EBS), lifecycle policies, and file systems.">
+            <img src="assets/images/certs/aws-storage.png" alt="AWS Storage">
+            <span>Storage</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HACKATHONS, EVENTS & EDUCATION TIMELINE
+         ========================================================================== -->
+    <section id="timeline" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span>EXPERIENCE & MILESTONES</span>
+        </div>
+        <h2 class="section-title">Hackathons & <span class="gradient-accent">Education.</span></h2>
+        <p class="section-subtitle">
+          Proven competitive hackathon problem-solver and high-performing computer science scholar.
+        </p>
+      </div>
+
+      <div class="timeline-section-grid">
+        <!-- Hackathon Spotlight Column -->
+        <div class="glass-panel hackathon-featured-card reveal-on-scroll">
+          <div class="project-top" style="margin-bottom: 8px;">
+            <span class="project-category-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald); border-color: rgba(16, 185, 129, 0.3);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              HACKATHON PARTICIPANT
+            </span>
+            <span class="glass-pill" style="font-size: 0.72rem;">PSG TECH COLLEGE</span>
+          </div>
+
+          <h3 class="project-title" style="margin-bottom: 6px;">Kriya Event — Ideathon & Hackathon</h3>
+          <p class="project-desc" style="margin-bottom: 14px;">
+            Competed in intensive 24-hour Ideathon and Hackathon challenges at PSG College of Technology, applying logical thinking, rapid prototyping, full-stack development, and team collaboration under pressure.
+          </p>
+
+          <div class="event-photos-grid">
+            <div class="event-photo-box" data-event-view data-event-src="assets/images/events/event1.png" data-event-title="Kriya Event — Hackathon Presentation" data-event-desc="Demonstrating prototype solutions and defense logic at PSG Tech.">
+              <img src="assets/images/events/event1.png" alt="Kriya Hackathon Event 1">
+              <div class="event-photo-overlay">
+                <span>🔍 Click to View Full Photo</span>
+              </div>
+            </div>
+
+            <div class="event-photo-box" data-event-view data-event-src="assets/images/events/event2.png" data-event-title="Kriya Event — Team Collaboration & Pitch" data-event-desc="Engineering and problem-solving session during Kriya Ideathon.">
+              <img src="assets/images/events/event2.png" alt="Kriya Hackathon Event 2">
+              <div class="event-photo-overlay">
+                <span>🔍 Click to View Full Photo</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px;">
+            <span class="glass-pill cyan" style="font-size: 0.75rem;">
+              Core Interests: Security Operations • Offensive Security • Network Security • Software & App Development
+            </span>
+          </div>
+        </div>
+
+        <!-- Academic Pathway Column -->
+        <div class="edu-timeline-column reveal-on-scroll">
+          <!-- SKCET -->
+          <div class="glass-panel edu-timeline-card">
+            <div class="edu-icon-marker">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="edu-info">
+              <span class="edu-year">2025 – 2028 | 3rd Year / 5th Sem</span>
+              <h4 class="edu-degree">BE Lateral Entry – CSE (Cyber Security)</h4>
+              <p class="edu-institution">SKCET, Coimbatore</p>
+              <div class="edu-score-pill">
+                <span>CGPA: 7.4</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diploma -->
+          <div class="glass-panel edu-timeline-card">
+            <div class="edu-icon-marker" style="color: var(--emerald); background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <div class="edu-info">
+              <span class="edu-year">2023 – 2025 | Lateral Entry</span>
+              <h4 class="edu-degree">Diploma in Computer Science & Engineering</h4>
+              <p class="edu-institution">M.S.P.V.N.L.T Polytechnic</p>
+              <div class="edu-score-pill">
+                <span>Distinction: 89%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12th Standard -->
+          <div class="glass-panel edu-timeline-card">
+            <div class="edu-icon-marker" style="color: var(--blue); background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <div class="edu-info">
+              <span class="edu-year">2022 – 2023</span>
+              <h4 class="edu-degree">Higher Secondary Certificate (12th Standard)</h4>
+              <p class="edu-institution">Andrews Mat. Hr. Sec. School</p>
+              <div class="edu-score-pill" style="color: var(--cyan); background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.25);">
+                <span>Score: 72%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10th Standard -->
+          <div class="glass-panel edu-timeline-card">
+            <div class="edu-icon-marker" style="color: var(--purple); background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.3);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <div class="edu-info">
+              <span class="edu-year">2020 – 2021</span>
+              <h4 class="edu-degree">Secondary School Leaving Certificate (10th)</h4>
+              <p class="edu-institution">Andrews Mat. Hr. Sec. School</p>
+              <div class="edu-score-pill" style="color: var(--purple); background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.25);">
+                <span>Status: COVID Passed Out</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & REACH OUT SECTION
+         ========================================================================== -->
+    <section id="contact" class="section">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>INITIATE CONNECTION</span>
+        </div>
+        <h2 class="section-title">Get In <span class="gradient-accent">Touch.</span></h2>
+        <p class="section-subtitle">
+          Seeking internship opportunities, collaborative cybersecurity research, or full-stack software development roles.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Direct Contact Info Glass Panel -->
+        <div class="glass-panel contact-info-panel reveal-on-scroll">
+          <div>
+            <h3 style="font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 8px;">
+              Let's build secure solutions together.
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">
+              I am actively available for technical internships, hackathon collaborations, and engineering discussions. Feel free to connect directly via email, phone, or LinkedIn.
+            </p>
+
+            <div class="contact-channel-list">
+              <!-- Email -->
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Direct Email</span>
+                  <a href="mailto:godwintharun3@gmail.com" class="channel-val">godwintharun3@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="godwintharun3@gmail.com" title="Copy Email">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Phone & WhatsApp</span>
+                  <a href="tel:+916369454943" class="channel-val">+91 63694 54943</a>
+                </div>
+                <button class="copy-btn" data-copy="+91 63694 54943" title="Copy Phone">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Location</span>
+                  <span class="channel-val">Tirunelveli, Tamil Nadu, India</span>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/tharun-godwin" target="_blank" rel="noreferrer" class="channel-val">
+                    linkedin.com/in/tharun-godwin
+                  </a>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">GitHub Repository</span>
+                  <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="channel-val">
+                    github.com/godwintharun3-source
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 15px;">
+            <a href="assets/resume.pdf" target="_blank" download class="btn btn-primary" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Official Resume (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form Panel -->
+        <div class="glass-panel contact-form-panel reveal-on-scroll">
+          <form id="contact-form" class="contact-form">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 4px;">
+              Send a Secure Dispatch
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+              Fill in your message to dispatch an instant email connection.
+            </p>
+
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name</label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label">Email Address</label>
+              <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message / Inquiry Details</label>
+              <textarea id="form-message" class="form-textarea" placeholder="Hello Tharun, I came across your portfolio and would love to discuss an internship opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Dispatch Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span style="font-weight: 700; font-size: 0.95rem; color: #fff;">THARUN GODWIN .C</span>
+        <span class="footer-copy">© 2026 Tharun Godwin .C • Cybersecurity & Software Engineering • 3D Spatial Systems & Biometric CMS</span>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/tharun-godwin" target="_blank" rel="noreferrer" class="btn-icon" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="mailto:godwintharun3@gmail.com" class="btn-icon" title="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <button id="scroll-top-btn" class="scroll-top-btn" title="Back to Top" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BIOMETRIC AUTHENTICATION MODAL (FINGERPRINT / TOUCH ID)
+       ========================================================================== -->
+  <div id="biometric-modal" class="modal-overlay">
+    <div class="modal-box" style="max-width: 440px;">
+      <button id="modal-auth-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div style="text-align: center;">
+        <span class="glass-pill cyan" style="margin-bottom: 12px;">🔒 WEBAUTHN BIOMETRICS</span>
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 6px;">
+          Admin Authentication
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+          Authenticate using your fingerprint sensor or enter Master PIN to unlock in-place CMS editing.
+        </p>
+
+        <!-- Fingerprint Scanner Trigger -->
+        <div id="btn-scan-fingerprint" class="fingerprint-scan-box" title="Scan Fingerprint / Touch ID">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69"></path>
+            <path d="M12 6a6 6 0 0 0-6 6c0 2.22 1.21 4.16 3 5.2"></path>
+            <path d="M12 10a2 2 0 0 0-2 2c0 .74.4 1.39 1 1.73"></path>
+            <path d="M12 14v4"></path>
+            <path d="M16 10a6 6 0 0 1 2 4.47"></path>
+            <path d="M20 12a10 10 0 0 1-.36 2.65"></path>
+          </svg>
+        </div>
+
+        <div id="auth-status-text" class="auth-status cyan">
+          Click fingerprint or enter PIN below
+        </div>
+
+        <!-- Master PIN Fallback Form -->
+        <form id="pin-auth-form" style="margin-top: 18px; display: flex; flex-direction: column; gap: 10px;">
+          <input type="password" id="pin-input" class="form-input" placeholder="Enter Master PIN (Default: tharun2026)" style="text-align: center; font-family: var(--font-mono); letter-spacing: 0.15em;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Unlock Admin Edit Mode
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       3D HUMANOID BOT AI CHAT DRAWER
+       ========================================================================== -->
+  <div id="bot-chat-drawer" class="bot-chat-drawer">
+    <div class="bot-chat-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 1.3rem;">🤖</span>
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.1;">TG-Jarvis Cyber Bot</h4>
+          <span style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--emerald);">● Online (Three.js 3D Sync)</span>
+        </div>
+      </div>
+      <button id="btn-close-bot-chat" class="btn-icon" style="width: 30px; height: 30px; font-size: 0.9rem;">✕</button>
+    </div>
+
+    <!-- 3D Bot Mini Viewport inside chat -->
+    <div class="humanoid-bot-wrapper" style="height: 180px;">
+      <div id="humanoid-bot-canvas-container"></div>
+    </div>
+
+    <div id="bot-chat-messages" class="bot-chat-messages">
+      <div class="chat-msg bot">
+        <div class="msg-avatar">🤖</div>
+        <div class="msg-bubble">
+          Hello! I'm Tharun's 3D Cyber Bot assistant. Ask me anything about his projects, cybersecurity tools, SIH participation, Tamil Nadu education path, or biometric editing!
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="bot-chips-row">
+      <button class="bot-chip" data-bot-prompt="Tell me about Tharun's projects">Projects</button>
+      <button class="bot-chip" data-bot-prompt="What cybersecurity tools does he know?">Tools</button>
+      <button class="bot-chip" data-bot-prompt="Tell me about SIH participation">SIH Details</button>
+      <button class="bot-chip" data-bot-prompt="What is his Tamil Nadu education pathway?">3 Locations</button>
+      <button class="bot-chip" data-bot-prompt="How do I unlock biometric edit mode?">Biometrics</button>
+    </div>
+
+    <div class="bot-chat-input-bar">
+      <form id="bot-chat-form" class="bot-chat-input-form">
+        <input type="text" id="bot-chat-input" class="bot-chat-input" placeholder="Ask Jarvis anything about Tharun..." autocomplete="off">
+        <button type="submit" class="btn btn-primary" style="padding: 8px 14px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CERTIFICATE & IMAGE LIGHTBOX MODAL
+       ========================================================================== -->
+  <div id="lightbox-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-img-container">
+        <img id="modal-img" src="" alt="Certificate Preview">
+      </div>
+      <div>
+        <h3 id="modal-title" class="modal-meta-title">Credential Details</h3>
+        <p id="modal-desc" class="modal-meta-desc">Verified Credential</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <!-- 1. Local Three.js Library -->
+  <script src="js/three.min.js"></script>
+  <!-- 2. Three.js 3D Bot & 3D Globe Spatial Engine -->
+  <script src="js/three-app.js"></script>
+  <!-- 3. WebAuthn Biometric & In-Place CMS Engine -->
+  <script src="js/auth-admin.js"></script>
+  <!-- 4. Portfolio AI Knowledge Bot Engine -->
+  <script src="js/bot-ai.js"></script>
+  <!-- 5. Core Portfolio Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>
