@@ -1303,15 +1303,38 @@
         <div class="glass-panel globe-canvas-card reveal-on-scroll">
           <div class="globe-hud-overlay">
             <span class="globe-hud-badge">LAT 8.7°N – 10.9°N // LON 76.9°E – 77.4°E</span>
-            <span class="globe-hud-badge" style="color: var(--emerald);">● TAMIL NADU, INDIA RADAR LOCKED</span>
+            <span class="globe-hud-badge" style="color: var(--emerald);">● SATELLITE 3D RADAR LOCKED</span>
           </div>
 
           <div id="cyber-globe-container"></div>
+          <div id="globe-badges-overlay" class="globe-badges-overlay"></div>
 
           <div class="globe-controls-overlay">
             <button id="btn-focus-india" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem;">
               🎯 Focus Tamil Nadu
             </button>
+            <button id="btn-rotate-globe" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem;">
+              🔄 Rotate
+            </button>
+          </div>
+
+          <!-- Cute Interactive Space Particles & Bot HUD (Matching SIH Project Style) -->
+          <div class="globe-robot-hud">
+            <div class="robot-hud-header">
+              <span class="hud-tag">● SPACE PARTICLES</span>
+              <button class="hud-chip" id="btn-toggle-particles">✨ Cosmic Stardust</button>
+            </div>
+            <div class="robot-hud-body">
+              <strong>Interactive Satellite Earth</strong>
+              <p>Photorealistic 3D Blue Marble globe with high-resolution South Asia satellite imagery and live beacons.</p>
+            </div>
+            <div class="robot-hud-footer">
+              <button class="btn-ask-robot" id="btn-ask-robot-globe">
+                <span class="robot-emoji">🤖</span>
+                <span>Ask Jarvis AI</span>
+              </button>
+              <span class="hud-hint">Hover state beacons →</span>
+            </div>
           </div>
         </div>
 
