@@ -75,13 +75,11 @@
     <nav class="navbar">
       <a href="#hero" class="nav-brand">
         <div class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
+          <img src="assets/images/sih_logo.png" alt="MPLAD Sovereign Emblem" class="brand-img">
         </div>
         <div class="brand-text">
-          <span class="brand-name">THARUN GODWIN .C</span>
-          <span class="brand-role">CYBERSECURITY & DEV</span>
+          <span class="brand-name">MPLAD<span class="brand-name-accent">.AI</span> <span class="brand-name-sub">// THARUN GODWIN .C</span></span>
+          <span class="brand-role">PARLIAMENTARY ANOMALY & CYBER DEFENSE INTELLIGENCE</span>
         </div>
       </a>
 
@@ -99,7 +97,7 @@
 
       <div class="nav-actions">
         <!-- 3-Way Theme Switcher (Auto / Dark / Light) -->
-        <button id="theme-toggle-btn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.78rem;" title="Switch Theme (Auto / Dark / Light)">
+        <button id="theme-toggle-btn" class="btn btn-secondary nav-btn-compact" title="Switch Theme (Auto / Dark / Light)">
           <span id="theme-toggle-icon">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="3"></circle>
@@ -109,17 +107,17 @@
           <span id="theme-toggle-label">AUTO</span>
         </button>
 
-        <!-- Biometric Admin Unlock Button -->
-        <button id="btn-biometric-auth" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.78rem;" title="Fingerprint / Touch ID Biometric Authentication">
+        <!-- Biometric Admin Unlock Button (Officer Sign In) -->
+        <button id="btn-biometric-auth" class="btn btn-secondary nav-btn-compact" title="Fingerprint / Touch ID Biometric Authentication">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69"></path>
             <path d="M12 12v4"></path>
             <circle cx="12" cy="8" r="1"></circle>
           </svg>
-          <span>🔒 Admin Edit</span>
+          <span>Sign In</span>
         </button>
 
-        <a href="assets/resume.pdf" target="_blank" download class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8rem;">
+        <a href="assets/resume.pdf" target="_blank" download class="btn btn-sih-register nav-btn-compact">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -161,55 +159,102 @@
          ========================================================================== -->
     <section id="hero" class="hero-section section">
       <div class="hero-grid">
-        <div class="hero-content reveal-on-scroll">
-          <div class="glass-pill emerald">
-            <span class="status-indicator"></span>
-            <span data-cms-key="hero_status_pill">AVAILABLE FOR INTERNSHIPS // SKCET COIMBATORE</span>
+        <!-- Cupertino Apple-Grade Frosted Liquid Glass Card (Matching Image 2) -->
+        <div class="hero-liquid-glass-card reveal-on-scroll">
+          <!-- Top Specular Gloss Sheen -->
+          <div class="hero-card-specular-gloss"></div>
+
+          <!-- Saffron / Rose SIH Pill Badge -->
+          <div class="sih-status-badge">
+            <svg class="sih-sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span data-cms-key="hero_sih_badge">SMART INDIA HACKATHON • PROBLEM STATEMENT SIH26102</span>
           </div>
 
-          <h1 class="hero-headline" data-cms-key="hero_main_headline">
-            Building Secure Code &<br>
-            <span class="gradient-accent">Defense-Grade Systems.</span>
-          </h1>
+          <!-- Emblem + Sovereign Title Header -->
+          <div class="hero-header-brand-row">
+            <div class="hero-emblem-box">
+              <img src="assets/images/sih_logo.png" alt="MPLAD Sovereign Emblem" class="hero-emblem-img">
+            </div>
+            <div>
+              <h1 class="hero-sovereign-title" data-cms-key="hero_main_headline">
+                MPLAD AI RISK & <br>
+                <span class="gradient-text-sih">FORENSIC INTELLIGENCE</span>
+              </h1>
+            </div>
+          </div>
 
+          <!-- Description -->
           <p class="hero-description" data-cms-key="hero_bio_text">
-            Hi, I’m <strong>Tharun Godwin .C</strong> — a Computer Science Engineering student specializing in 
-            <strong>Cyber Security</strong> & <strong>Software Development</strong>. Hands-on project experience spanning 
-            unified SOC monitoring, AI anomaly risk platforms, smart telemetry pipelines, and scalable e-commerce microservices.
+            Multi-dimensional parliamentary expenditure monitoring and fraud anomaly detection for the Members of Parliament Local Area Development Scheme. Real-time bicameral governance spanning <strong class="text-amber-saffron">Lok Sabha (543 MPs)</strong> and <strong class="text-cyan-accent">Rajya Sabha (231 MPs)</strong>. Engineered by <strong>Tharun Godwin .C</strong> — Cyber Security Specialist & Software Architect (SKCET Coimbatore).
           </p>
 
-          <div class="hero-tags-row">
-            <span class="glass-pill">🛡️ SOC Threat Intel</span>
-            <span class="glass-pill">🤖 Machine Learning & AI</span>
-            <span class="glass-pill">⚡ Spring Boot & FastAPI</span>
-            <span class="glass-pill">☁️ AWS & Red Hat</span>
+          <!-- Application Access Gateways -->
+          <div class="hero-gateways-panel">
+            <div class="gateways-header-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              <span>APPLICATION ACCESS GATEWAYS:</span>
+            </div>
+
+            <div class="gateways-button-grid">
+              <!-- Gateway 1: Officer & Admin Login (WebAuthn Biometrics) -->
+              <button type="button" id="btn-officer-login" class="btn-gateway btn-gateway-officer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                  <polyline points="10 17 15 12 10 7"></polyline>
+                  <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                <span>Officer & Admin Login</span>
+              </button>
+
+              <!-- Gateway 2: Explore Cyber Deck -->
+              <a href="#cyber-deck" class="btn-gateway btn-gateway-deck">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span>Explore Cyber Deck ♠</span>
+              </a>
+            </div>
+
+            <div class="gateways-footer-row">
+              <button type="button" id="btn-gateway-guest" class="btn-gateway-guest-link">
+                <span>🌐 Explore Application as Guest</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <span class="gateways-scope-tag">Scoped by State & Parliament House</span>
+            </div>
           </div>
 
-          <div class="hero-cta-group">
-            <a href="#cyber-deck" class="btn btn-primary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          <!-- Chrome Browser Live Alerts Card -->
+          <div class="chrome-alerts-banner">
+            <div class="alerts-banner-left">
+              <img src="assets/images/sih_logo.png" alt="Alert Emblem" class="alerts-emblem-icon">
+              <div>
+                <h4 class="alerts-banner-title">
+                  <span>Chrome Browser Live Alerts</span>
+                  <span class="badge-active-audit">ACTIVE AUDIT</span>
+                </h4>
+                <p class="alerts-banner-desc">Receive desktop alerts for cost escalation and ghost completion anomalies.</p>
+              </div>
+            </div>
+            <button type="button" id="btn-trigger-chrome-alert" class="btn-trigger-live-alert">
+              <svg class="bell-alert-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
               </svg>
-              <span>Play Cyber Deck ♠</span>
-            </a>
-            <button id="btn-open-bot-chat" class="btn btn-secondary">
-              <span>🤖 Chat with Bot</span>
+              <span>Trigger Live Alert</span>
             </button>
-            <a href="https://github.com/godwintharun3-source" target="_blank" rel="noreferrer" class="btn-icon" title="GitHub Profile">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/tharun-godwin" target="_blank" rel="noreferrer" class="btn-icon" title="LinkedIn Profile">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
           </div>
 
+          <!-- Metrics Row -->
           <div class="hero-metrics">
             <div class="metric-item">
               <div class="metric-val" data-cms-key="metric_proj">4<span>+</span></div>
@@ -1306,8 +1351,34 @@
             <span class="globe-hud-badge" style="color: var(--emerald);">● SATELLITE 3D RADAR LOCKED</span>
           </div>
 
+          <!-- Parliamentary Intelligence Dossier (Matching Image 1) -->
+          <div class="dossier-floating-card">
+            <div class="dossier-card-header">
+              <span class="dossier-dot"></span>
+              <h4 class="dossier-card-title">Parliamentary Intelligence Dossier</h4>
+            </div>
+            <p class="dossier-card-desc">
+              Hover over any state beacon or pin to inspect live bicameral allocations, completed infrastructure works, and algorithmic audit flags.
+            </p>
+            <div class="dossier-chips-row">
+              <button class="dossier-chip" data-state="Punjab">Punjab</button>
+              <button class="dossier-chip" data-state="Delhi">Delhi</button>
+              <button class="dossier-chip" data-state="Maharashtra">Maharashtra</button>
+              <button class="dossier-chip" data-state="Telangana">Telangana</button>
+              <button class="dossier-chip active" data-state="Tamil Nadu">Tamil Nadu</button>
+              <button class="dossier-chip" data-state="Gujarat">Gujarat</button>
+            </div>
+          </div>
+
           <div id="cyber-globe-container"></div>
           <div id="globe-badges-overlay" class="globe-badges-overlay"></div>
+
+          <!-- Globe Bottom Floating Pill (Matching Image 1) -->
+          <div class="globe-bottom-floating-pill">
+            <span class="pill-dot"></span>
+            <span class="pill-text">Hover any state beacon for live MP forensics</span>
+            <button class="pill-action-btn" id="btn-focus-tn-portal">Enter Portal ➔</button>
+          </div>
 
           <div class="globe-controls-overlay">
             <button id="btn-focus-india" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem;">
@@ -1929,6 +2000,123 @@
         <h3 id="modal-title" class="modal-meta-title">Credential Details</h3>
         <p id="modal-desc" class="modal-meta-desc">Verified Credential</p>
       </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING AI COMPANION ROBOT (MATCHING IMAGE 1 & IMAGE 2)
+       ========================================================================== -->
+  <div id="floating-robot-companion" class="floating-robot-companion">
+    <!-- 1. Interactive Speech / Hints Bubble -->
+    <div id="robot-hint-bubble" class="robot-hint-bubble">
+      <div class="robot-bubble-header">
+        <div class="bubble-tag-wrap">
+          <span class="bubble-live-dot"></span>
+          <span id="robot-bubble-tag" class="bubble-tag-text">3D GEOSPATIAL AUDIT</span>
+        </div>
+        <div class="bubble-ctrls">
+          <button id="btn-robot-dash" class="bubble-btn-dash" title="Make robot sprint across screen!">⚡ Dash</button>
+          <button id="btn-robot-ask-ai" class="bubble-btn-mode" title="Open 3D Cyber Bot chat">Ask AI</button>
+          <button id="btn-robot-prev" class="bubble-btn-icon" title="Previous Hint">‹</button>
+          <button id="btn-robot-next" class="bubble-btn-icon" title="Next Hint">›</button>
+          <button id="btn-robot-close-bubble" class="bubble-btn-icon" title="Close Bubble">✕</button>
+        </div>
+      </div>
+
+      <div class="robot-bubble-body">
+        <h5 id="robot-bubble-title" class="bubble-title-text">Earth & India Globe</h5>
+        <p id="robot-bubble-desc" class="bubble-desc-text">
+          Scroll down to transition smoothly from the global Earth sphere directly into the high-resolution forensic map of India.
+        </p>
+      </div>
+
+      <div class="robot-bubble-footer">
+        <button id="btn-robot-chat-link" class="bubble-chat-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <span>Ask Robot AI</span>
+        </button>
+        <button id="btn-robot-next-hint" class="bubble-next-link">
+          <span>Next Hint</span>
+          <span>➔</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. SVG Animated Chibi Robot -->
+    <div id="robot-avatar-wrap" class="robot-avatar-wrap" title="Click to interact, double click to dash!">
+      <div class="robot-pulse-aura"></div>
+      <svg id="robot-avatar-svg" width="80" height="86" viewBox="0 0 100 110" class="robot-svg">
+        <defs>
+          <linearGradient id="robotBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b" />
+            <stop offset="50%" stop-color="#0f172a" />
+            <stop offset="100%" stop-color="#090e17" />
+          </linearGradient>
+          <linearGradient id="robotTrimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#38bdf8" />
+            <stop offset="100%" stop-color="#0284c7" />
+          </linearGradient>
+          <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0a0f1d" />
+            <stop offset="100%" stop-color="#030712" />
+          </linearGradient>
+          <filter id="eyeGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <!-- Shadow -->
+        <ellipse cx="50" cy="104" rx="22" ry="4" fill="rgba(0,0,0,0.3)" />
+
+        <!-- Antenna -->
+        <line x1="50" y1="20" x2="50" y2="9" stroke="url(#robotTrimGrad)" stroke-width="3.5" stroke-linecap="round" />
+        <circle id="robot-antenna-bulb" cx="50" cy="8" r="5" fill="#00f0ff" filter="url(#eyeGlowFilter)">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Ears -->
+        <rect x="14" y="28" width="6" height="14" rx="3" fill="url(#robotTrimGrad)" />
+        <rect x="80" y="28" width="6" height="14" rx="3" fill="url(#robotTrimGrad)" />
+
+        <!-- Head Capsule -->
+        <rect x="20" y="18" width="60" height="44" rx="18" fill="url(#robotBodyGrad)" stroke="url(#robotTrimGrad)" stroke-width="2.5" />
+
+        <!-- Visor -->
+        <rect x="26" y="25" width="48" height="28" rx="12" fill="url(#visorGrad)" stroke="#1e293b" stroke-width="1.2" />
+        <path d="M 30 28 Q 50 31 70 28" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none" />
+
+        <!-- Eyes -->
+        <g id="robot-eyes-group" filter="url(#eyeGlowFilter)">
+          <ellipse id="robot-eye-left" cx="39" cy="39" rx="4.8" ry="5.5" fill="#00f0ff" />
+          <circle id="robot-pupil-left" cx="40.2" cy="37.5" r="1.4" fill="#ffffff" />
+          <ellipse id="robot-eye-right" cx="61" cy="39" rx="4.8" ry="5.5" fill="#00f0ff" />
+          <circle id="robot-pupil-right" cx="62.2" cy="37.5" r="1.4" fill="#ffffff" />
+        </g>
+
+        <!-- Smile -->
+        <path id="robot-mouth" d="M 45 47 Q 50 51 55 47" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" fill="none" />
+
+        <!-- Neck -->
+        <rect x="44" y="62" width="12" height="4" rx="2" fill="url(#robotTrimGrad)" />
+
+        <!-- Torso -->
+        <path d="M 28 66 Q 50 63 72 66 L 76 88 Q 50 92 24 88 Z" fill="url(#robotBodyGrad)" stroke="url(#robotTrimGrad)" stroke-width="2.5" />
+
+        <!-- Arc Reactor -->
+        <circle cx="50" cy="77" r="5.5" fill="url(#visorGrad)" stroke="url(#robotTrimGrad)" stroke-width="1.5" />
+        <circle cx="50" cy="77" r="3.2" fill="#00f0ff" filter="url(#eyeGlowFilter)">
+          <animate attributeName="r" values="2.6;3.6;2.6" dur="2s" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Arms -->
+        <g id="robot-arm-left">
+          <rect x="18" y="68" width="7" height="15" rx="3.5" fill="url(#robotBodyGrad)" stroke="url(#robotTrimGrad)" stroke-width="1.8" />
+        </g>
+        <g id="robot-arm-right">
+          <rect x="75" y="68" width="7" height="15" rx="3.5" fill="url(#robotBodyGrad)" stroke="url(#robotTrimGrad)" stroke-width="1.8" />
+        </g>
+      </svg>
     </div>
   </div>
 

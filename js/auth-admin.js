@@ -66,6 +66,17 @@
       }
     });
 
+    const officerLoginBtn = document.getElementById('btn-officer-login');
+    if (officerLoginBtn) {
+      officerLoginBtn.addEventListener('click', () => {
+        if (!isAdminAuthenticated) {
+          openAuthModal();
+        } else {
+          exitAdminMode();
+        }
+      });
+    }
+
     if (closeBtn) {
       closeBtn.addEventListener('click', closeAuthModal);
     }

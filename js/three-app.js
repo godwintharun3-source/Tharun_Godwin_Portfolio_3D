@@ -902,6 +902,21 @@
         manualRotY = 0;
         globeGroup.rotation.y = targetRotY;
         globeGroup.rotation.x = targetRotX;
+        camera.position.set(0, 1.8, 32);
+        if (window.playSynthSound) window.playSynthSound('blip', 700, 0.08);
+        if (window.showToast) window.showToast('3D Radar Centered: Tamil Nadu Academic Hub');
+      },
+      focusState: (stateName) => {
+        const found = INDIAN_STATE_NODES.find(n => n.name.toLowerCase().includes(stateName.toLowerCase()));
+        if (found) {
+          manualRotX = 0;
+          manualRotY = 0;
+          globeGroup.rotation.x = (found.lat * Math.PI / 180) * 0.45;
+          globeGroup.rotation.y = -(found.lon * Math.PI / 180) - Math.PI / 2 + 0.45;
+          camera.position.set(0, 1.8, 32);
+          if (window.playSynthSound) window.playSynthSound('blip', 650, 0.08);
+          if (window.showToast) window.showToast(`3D Radar Centered: ${found.name}`);
+        }
       }
     };
 

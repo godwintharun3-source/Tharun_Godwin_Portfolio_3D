@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactAndClipboard();
   initNavigation();
   initScrollAnimations();
+  initHeroGateways();
+  initFloatingRobotCompanion();
+  initGlobeDossier();
 });
 
 /* ==========================================================================
@@ -716,6 +719,21 @@ function initScrollAnimations() {
 
   document.querySelectorAll('.reveal-on-scroll').forEach(el => {
     observer.observe(el);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
+      el.classList.add('revealed');
+    }
+  });
+
+  window.addEventListener('hashchange', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
+          el.classList.add('revealed');
+        }
+      });
+    }, 150);
   });
 }
 
@@ -748,3 +766,222 @@ function showToast(message) {
 }
 
 window.showToast = showToast;
+
+/* ==========================================================================
+   HERO GATEWAYS & CHROME LIVE ALERTS
+   ========================================================================== */
+function initHeroGateways() {
+  const officerLoginBtn = document.getElementById('btn-officer-login');
+  const exploreGuestBtn = document.getElementById('btn-gateway-guest');
+  const chromeAlertBtn = document.getElementById('btn-trigger-chrome-alert');
+
+  if (officerLoginBtn) {
+    officerLoginBtn.addEventListener('click', () => {
+      const authBtn = document.getElementById('btn-biometric-auth');
+      if (authBtn) authBtn.click();
+      if (window.playSynthSound) window.playSynthSound('blip', 650, 0.08);
+    });
+  }
+
+  if (exploreGuestBtn) {
+    exploreGuestBtn.addEventListener('click', () => {
+      const chatBtn = document.getElementById('btn-open-bot-chat');
+      if (chatBtn) chatBtn.click();
+      if (window.playSynthSound) window.playSynthSound('blip', 600, 0.08);
+    });
+  }
+
+  if (chromeAlertBtn) {
+    chromeAlertBtn.addEventListener('click', async () => {
+      if (window.playSynthSound) window.playSynthSound('flip', 850, 0.12);
+      
+      const alertTitle = "🚨 MPLAD AI Sovereign Audit Flag";
+      const alertBody = "Amritsar, Punjab (#80673): +100% Cost Escalation Anomaly Flagged by Isolation Forest ML Engine (₹5.0L → ₹10.0L).";
+
+      if ("Notification" in window) {
+        if (Notification.permission === "granted") {
+          try {
+            new Notification(alertTitle, {
+              body: alertBody,
+              icon: "assets/images/sih_logo.png"
+            });
+          } catch (e) {
+            console.log("Desktop notification fallback:", e);
+          }
+        } else if (Notification.permission !== "denied") {
+          const perm = await Notification.requestPermission();
+          if (perm === "granted") {
+            try {
+              new Notification(alertTitle, {
+                body: alertBody,
+                icon: "assets/images/sih_logo.png"
+              });
+            } catch (e) {}
+          }
+        }
+      }
+
+      showToast("🚨 Dispatched Chrome Live Audit Notification: Project #80673 Flagged");
+    });
+  }
+}
+
+/* ==========================================================================
+   FLOATING AI COMPANION ROBOT (MATCHING IMAGE 1 & IMAGE 2)
+   ========================================================================== */
+function initFloatingRobotCompanion() {
+  const ROBOT_TIPS = [
+    {
+      tag: "3D GEOSPATIAL AUDIT",
+      title: "Earth & India Globe",
+      text: "Scroll down to transition smoothly from the global Earth sphere directly into the high-resolution forensic map of India."
+    },
+    {
+      tag: "BICAMERAL PARLIAMENT",
+      title: "Lok Sabha & Rajya Sabha",
+      text: "Auditing 543 Lok Sabha and 231 Rajya Sabha allocations across all 36 States & Union Territories with real MP directories."
+    },
+    {
+      tag: "ANOMALY DETECTOR",
+      title: "Flagged Project #80673",
+      text: "Active critical audit detected in Punjab: +100% cost escalation flagged by our Isolation Forest AI engine."
+    },
+    {
+      tag: "SPACE PARTICLES",
+      title: "Interactive Stardust",
+      text: "Move your cursor across the screen to watch cosmic particles part and disperse with realistic physics."
+    }
+  ];
+
+  let currentTipIndex = 0;
+  const bubble = document.getElementById('robot-hint-bubble');
+  const tagEl = document.getElementById('robot-bubble-tag');
+  const titleEl = document.getElementById('robot-bubble-title');
+  const descEl = document.getElementById('robot-bubble-desc');
+  const robotWrap = document.getElementById('robot-avatar-wrap');
+  const armLeft = document.getElementById('robot-arm-left');
+  const eyeLeft = document.getElementById('robot-eye-left');
+  const pupilLeft = document.getElementById('robot-pupil-left');
+  const eyeRight = document.getElementById('robot-eye-right');
+  const pupilRight = document.getElementById('robot-pupil-right');
+
+  function updateTip(index) {
+    currentTipIndex = (index + ROBOT_TIPS.length) % ROBOT_TIPS.length;
+    const item = ROBOT_TIPS[currentTipIndex];
+    if (tagEl) tagEl.textContent = item.tag;
+    if (titleEl) titleEl.textContent = item.title;
+    if (descEl) descEl.textContent = item.text;
+  }
+
+  const nextBtn = document.getElementById('btn-robot-next');
+  const nextHintBtn = document.getElementById('btn-robot-next-hint');
+  const prevBtn = document.getElementById('btn-robot-prev');
+  const closeBtn = document.getElementById('btn-robot-close-bubble');
+  const dashBtn = document.getElementById('btn-robot-dash');
+  const askAiBtn = document.getElementById('btn-robot-ask-ai');
+  const chatLinkBtn = document.getElementById('btn-robot-chat-link');
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { updateTip(currentTipIndex + 1); if (window.playSynthSound) window.playSynthSound('blip', 600, 0.05); });
+  if (nextHintBtn) nextHintBtn.addEventListener('click', () => { updateTip(currentTipIndex + 1); if (window.playSynthSound) window.playSynthSound('blip', 600, 0.05); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { updateTip(currentTipIndex - 1); if (window.playSynthSound) window.playSynthSound('blip', 550, 0.05); });
+
+  if (closeBtn && bubble) {
+    closeBtn.addEventListener('click', () => {
+      bubble.classList.add('hidden');
+    });
+  }
+
+  function triggerRobotDash() {
+    if (!robotWrap || robotWrap.classList.contains('robot-crazy-dash')) return;
+    robotWrap.classList.add('robot-crazy-dash');
+    if (window.playSynthSound) window.playSynthSound('shuffle', 400, 0.4);
+    showToast('⚡ Robot AI Sprinting across screen!');
+    setTimeout(() => {
+      robotWrap.classList.remove('robot-crazy-dash');
+    }, 2850);
+  }
+
+  if (dashBtn) {
+    dashBtn.addEventListener('click', triggerRobotDash);
+  }
+
+  function openBotChat() {
+    const drawer = document.getElementById('bot-chat-drawer');
+    if (drawer) drawer.classList.add('active');
+    if (window.TGBot) {
+      window.TGBot.setExpression('happy');
+      window.TGBot.wave();
+    }
+    if (window.playSynthSound) window.playSynthSound('blip', 750, 0.08);
+  }
+
+  if (askAiBtn) askAiBtn.addEventListener('click', openBotChat);
+  if (chatLinkBtn) chatLinkBtn.addEventListener('click', openBotChat);
+
+  if (robotWrap) {
+    robotWrap.addEventListener('click', () => {
+      if (bubble && bubble.classList.contains('hidden')) {
+        bubble.classList.remove('hidden');
+      } else {
+        updateTip(currentTipIndex + 1);
+      }
+      if (armLeft) {
+        armLeft.classList.add('robot-arm-waving');
+        setTimeout(() => armLeft.classList.remove('robot-arm-waving'), 1200);
+      }
+      if (window.playSynthSound) window.playSynthSound('blip', 680, 0.08);
+    });
+
+    robotWrap.addEventListener('dblclick', triggerRobotDash);
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    if (!eyeLeft || !eyeRight) return;
+    const nx = (e.clientX / window.innerWidth - 0.5) * 3;
+    const ny = (e.clientY / window.innerHeight - 0.5) * 2;
+    if (pupilLeft) {
+      pupilLeft.setAttribute('cx', (40.2 + nx).toFixed(1));
+      pupilLeft.setAttribute('cy', (37.5 + ny).toFixed(1));
+    }
+    if (pupilRight) {
+      pupilRight.setAttribute('cx', (62.2 + nx).toFixed(1));
+      pupilRight.setAttribute('cy', (37.5 + ny).toFixed(1));
+    }
+  }, { passive: true });
+
+  setInterval(() => {
+    if (!eyeLeft || !eyeRight) return;
+    eyeLeft.setAttribute('ry', '0.6');
+    eyeRight.setAttribute('ry', '0.6');
+    setTimeout(() => {
+      eyeLeft.setAttribute('ry', '5.5');
+      eyeRight.setAttribute('ry', '5.5');
+    }, 180);
+  }, 4200);
+}
+
+/* ==========================================================================
+   GLOBE DOSSIER STATE CHIPS INTERACTION
+   ========================================================================== */
+function initGlobeDossier() {
+  const chips = document.querySelectorAll('.dossier-chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const state = chip.dataset.state;
+      if (window.TGGlobe && window.TGGlobe.focusState) {
+        window.TGGlobe.focusState(state);
+      }
+    });
+  });
+
+  const portalBtn = document.getElementById('btn-focus-tn-portal');
+  if (portalBtn) {
+    portalBtn.addEventListener('click', () => {
+      if (window.TGGlobe && window.TGGlobe.focusTamilNadu) {
+        window.TGGlobe.focusTamilNadu();
+      }
+    });
+  }
+}
